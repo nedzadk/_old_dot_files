@@ -4,8 +4,7 @@ set nocompatible
 
 " Load Vim Plug 
 call plug#begin('~/.vim/plugged')
-" ... plugins ... 
-
+" ... plugins ...  
 " Sensible plugin from Tpope 
 Plug 'tpope/vim-sensible'
 " Fuzzy finde for Vim ( requirements macos: brew install fzf the_silver_searcher)
@@ -22,9 +21,12 @@ Plug 'roxma/vim-hug-neovim-rpc'
 
 "Javascript Syntax
 Plug 'pangloss/vim-javascript'
+Plug 'sonph/onehalf'
 
-"Colorscheme
+"Colorschemes
 Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
+
 " ... end of plugins ...
 call plug#end()
 
@@ -58,7 +60,7 @@ set smartcase
 " Colorscheme setup
 set termguicolors
 set background=dark
-colorscheme solarized8
+colorscheme gruvbox
 
 syntax on 
 
