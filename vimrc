@@ -12,6 +12,9 @@ Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
 
+" NERDTree plugin
+Plug 'scrooloose/nerdtree'
+
 "Colorscheme
 Plug 'lifepillar/vim-solarized8'
 " ... end of plugins ...
@@ -55,14 +58,19 @@ syntax on
 " End of general editor conf
 " **************************
 
+"NERDTree configuration 
+"Map to Ctrl-N
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+
 
 " **************************
 " Fuzzy Finder configuration
 " **************************
 
 " Key mapping for fzf 
-nmap <Leader>t :Files<CR>
-nmap <Leader>b :Buffers<CR>
+nmap <C-p> :Files<CR>
+nmap <C-b> :Buffers<CR>
 
 set rtp+=/usr/local/opt/fzf
 
