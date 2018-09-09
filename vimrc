@@ -38,7 +38,7 @@ set noeol
 set autoindent
 set colorcolumn=80
 set wrap
-set cursorline
+" set cursorline
 set lbr
 set noswapfile
 set nobackup
