@@ -15,6 +15,14 @@ Plug 'junegunn/fzf.vim'
 " NERDTree plugin
 Plug 'scrooloose/nerdtree'
 
+" Deoplete
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
+"Javascript Syntax
+Plug 'pangloss/vim-javascript'
+
 "Colorscheme
 Plug 'lifepillar/vim-solarized8'
 " ... end of plugins ...
@@ -30,7 +38,6 @@ let mapleader = ","
 set number
 set ruler
 set encoding=utf-8
-set t_Co=256
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -49,6 +56,7 @@ set ignorecase
 set smartcase
 
 " Colorscheme setup
+set termguicolors
 set background=dark
 colorscheme solarized8
 
@@ -58,36 +66,38 @@ syntax on
 " End of general editor conf
 " **************************
 
-"NERDTree configuration 
-"Map to Ctrl-N
+" NERDTree configuration 
+" Map to Ctrl-N
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
+" Deoplete config
+let g:deoplete#enable_at_startup = 1
 
 " **************************
 " Fuzzy Finder configuration
 " **************************
 
 " Key mapping for fzf 
-nmap <C-p> :Files<CR>
+nmap <C-p> :GFiles<CR>
 nmap <C-b> :Buffers<CR>
 
 set rtp+=/usr/local/opt/fzf
 
 let g:fzf_tags_command = 'ctags --extra=+f -R'
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+			\ { 'fg':      ['fg', 'Normal'],
+			\ 'bg':      ['bg', 'Normal'],
+			\ 'hl':      ['fg', 'Comment'],
+			\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+			\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+			\ 'hl+':     ['fg', 'Statement'],
+			\ 'info':    ['fg', 'PreProc'],
+			\ 'prompt':  ['fg', 'Conditional'],
+			\ 'pointer': ['fg', 'Exception'],
+			\ 'marker':  ['fg', 'Keyword'],
+			\ 'spinner': ['fg', 'Label'],
+			\ 'header':  ['fg', 'Comment'] }
 
 " ***************************
 " End of Fuzzy Finder config
