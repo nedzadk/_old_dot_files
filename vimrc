@@ -80,6 +80,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Key mapping for fzf 
 nmap <C-p> :GFiles<CR>
+nmap <C-o> :Files<CR>
 nmap <C-b> :Buffers<CR>
 
 set rtp+=/usr/local/opt/fzf
