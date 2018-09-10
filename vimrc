@@ -5,8 +5,16 @@ set nocompatible
 " Load Vim Plug 
 call plug#begin('~/.vim/plugged')
 " ... plugins ...  
+
 " Sensible plugin from Tpope 
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible' "Vim defaults
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary' "Comment out blocks of text gcc (gc - selected text)
+Plug 'tpope/vim-surround' "Auto add matching parent.
+Plug 'tpope/vim-fugitive' "Git wrapper
+Plug 'tpope/vim-dadbod' "Database interface
+Plug 'tpope/vim-rails' "Vim rails 
+
 " Fuzzy finde for Vim ( requirements macos: brew install fzf the_silver_searcher)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim'
@@ -20,8 +28,13 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
 "Javascript Syntax
-Plug 'pangloss/vim-javascript'
-Plug 'sonph/onehalf'
+Plug 'sheerun/vim-polyglot'
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+"Airline status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "Colorschemes
 Plug 'lifepillar/vim-solarized8'
@@ -33,12 +46,7 @@ call plug#end()
 " **************************
 " General editor conf 
 " **************************
-
-" Map leader
-let mapleader = ","
-
-set number
-set ruler
+" Map leader let mapleader = "," set number set ruler
 set encoding=utf-8
 set tabstop=2
 set shiftwidth=2
@@ -47,6 +55,7 @@ set noeol
 set autoindent
 set colorcolumn=80
 set wrap
+set number
 " set cursorline
 set lbr
 set noswapfile
@@ -84,6 +93,7 @@ let g:deoplete#enable_at_startup = 1
 nmap <C-p> :GFiles<CR>
 nmap <C-o> :Files<CR>
 nmap <C-b> :Buffers<CR>
+nmap \\ :Ag 
 
 set rtp+=/usr/local/opt/fzf
 
