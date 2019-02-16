@@ -14,9 +14,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'groenewege/vim-less'
 Plug 'othree/csscomplete.vim'
 "Themes (Fancy Shit)
-Plug 'kaicataldo/material.vim'
-Plug 'morhetz/gruvbox'
-Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 "Linter
 Plug 'w0rp/ale'
 "Snippets
@@ -51,10 +49,9 @@ call plug#end()
 " Fancy shit configuration
 syntax enable
 set termguicolors
+let g:onedark_terminal_italics=1
 set background=dark
-colorscheme OceanicNext
-let g:material_theme_style = 'dark'
-let g:deoplete#enable_at_startup = 1
+colorscheme onedark
 
 "Basic shit
 set cursorline
@@ -63,6 +60,7 @@ nnoremap <CR> :noh<CR><CR>
 set nu relativenumber
 let g:jsx_ext_required = 0
 set noerrorbells
+let g:deoplete#enable_at_startup = 1
 
 " CtrlP configuration
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -108,5 +106,5 @@ set noswapfile
 set nobackup
 
 "Airline config 
-let g:airline_theme                       = 'oceanicnext'
+let g:airline_theme = 'onedark'
 
