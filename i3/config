@@ -9,7 +9,7 @@ exec --no-startup-id xrandr --dpi 20
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id st
+bindsym $mod+Return exec --no-startup-id st -e /bin/zsh --login
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -164,7 +164,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/bg3.jpg
 bindsym Control+$mod+a exec --no-startup-id ~/i3scripts/lock.sh
 
 #Application shortcuts
-bindsym Control+$mod+i exec --no-startup-id firefox
+bindsym Control+$mod+i exec firefox
 bindsym Control+$mod+x exec --no-startup-id st ranger
 bindsym Control+Shift+4 exec --no-startup-id flameshot gui
 bindsym Control+Shift+3 exec --no-startup-id flameshot full
@@ -195,3 +195,4 @@ bindsym XF86AudioPrev exec --no-startup-id sp prev
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id unclutter
+exec --no-startup-id dunst
