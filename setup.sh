@@ -4,6 +4,7 @@ ln -s ${PWD}/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ${PWD}/nvim/UltiSnips ~/.config/nvim/UltiSnips
 ln -s ${PWD}/xresources/dot-Xresources ~/.Xresources
 ln -s ${PWD}/i3scripts ~/i3scripts
+ln -s ${PWD}/compton/compton.conf ~/.config/compton.conf
 
 # Control spotify 
 ln -s ${PWD}/tools/sp /usr/bin/sp
