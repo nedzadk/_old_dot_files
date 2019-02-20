@@ -158,7 +158,7 @@ focus_follows_mouse no
 gaps inner 15
 gaps outer 0
 smart_gaps on
-exec --no-startup-id feh --bg-fill ~/Pictures/bg3.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/bg10.jpg
 
 #Run lockscreen
 bindsym Control+$mod+a exec --no-startup-id ~/i3scripts/lock.sh
