@@ -47,6 +47,8 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 "Fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+"Buffer tabline
+Plug 'ap/vim-buftabline'
 call plug#end()
 
 " Fancy shit configuration
@@ -111,3 +113,8 @@ set nobackup
 "Airline config 
 let g:airline_theme = 'onedark'
 
+"Buffer navigation
+set hidden
+nnoremap <C-H> :bnext<CR>
+nnoremap <C-L> :bprev<CR>
+nnoremap <C-D><C-D> :bd<CR>

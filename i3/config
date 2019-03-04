@@ -110,10 +110,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym Control+$mod+h resize shrink width 10 px or 10 ppt
-bindsym Control+$mod+j resize grow height 10 px or 10 ppt
-bindsym Control+$mod+k resize shrink height 10 px or 10 ppt
-bindsym Control+$mod+l  resize grow width 10 px or 10 ppt
+bindsym Control+$mod+h resize shrink width 5 px or 5 ppt
+bindsym Control+$mod+j resize grow height 5 px or 5 ppt
+bindsym Control+$mod+k resize shrink height 5 px or 5 ppt
+bindsym Control+$mod+l  resize grow width 5 px or 5 ppt
 
 client.focused			    #bf616a #2f343f #d8dee8 #bf616a #d8dee8
 client.focused_inactive	#2f343f #2f343f #d8dee8 #2f343f #2f343f
@@ -134,7 +134,7 @@ bar {
         focused_workspace	#2f343f	#bf616a	#d8dee8
         active_workspace	#2f343f	#2f343f	#d8dee8
         inactive_workspace	#2f343f	#2f343f	#d8dee8
-        urgent_workspace #2f343f #ebcb8b #2f343f<Paste>
+        urgent_workspace #2f343f #ebcb8b #2f343f
     }
 }
 
@@ -152,7 +152,7 @@ mode "$mode_system" {
 bindsym Control+$mod+Escape mode "$mode_system"
 
 #General config
-new_window pixel 2
+new_window pixel 1
 focus_follows_mouse no
 gaps inner 15
 gaps outer 0
