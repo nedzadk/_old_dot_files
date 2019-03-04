@@ -2,7 +2,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Fira Mono for Powerline 11
+font pango:FontAwesom5Free 8, FontAwesome5FreeSolid 8, FontAwesome5Brands 8, Fira Mono 10
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id xrandr --dpi 20
 
@@ -124,8 +124,8 @@ client.background       #2f343f
 
 bar {
   position top
-    status_command i3status -c ~/.config/i3/i3status.conf
-
+    #status_command i3status -c ~/.config/i3/i3status.conf
+    status_command i3blocks -c /home/nedzad/Projects/dotfiles/i3/i3blocks.conf
     colors {
       background #2f343f
         statusline #2f343f
@@ -156,14 +156,14 @@ new_window pixel 2
 focus_follows_mouse no
 gaps inner 15
 gaps outer 0
-smart_gaps on
-exec --no-startup-id feh --bg-fill ~/Pictures/bg1.jpg
+#smart_gaps on
+exec --no-startup-id feh --bg-fill ~/Pictures/bg2.jpg
 
 #Run lockscreen
 bindsym Control+$mod+a exec --no-startup-id ~/i3scripts/lock.sh
 
 #Application shortcuts
-bindsym Control+$mod+i exec firefox
+bindsym Control+$mod+i exec google-chrome-stable
 bindsym Control+$mod+x exec --no-startup-id st ranger
 bindsym Control+Shift+4 exec --no-startup-id flameshot gui
 bindsym Control+Shift+3 exec --no-startup-id flameshot full
@@ -201,3 +201,6 @@ exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
 
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+exec setxkbmap -option esc:nocaps
+
