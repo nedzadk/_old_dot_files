@@ -15,6 +15,7 @@ Plug 'groenewege/vim-less'
 Plug 'othree/csscomplete.vim'
 "Themes (Fancy Shit)
 Plug 'joshdick/onedark.vim'
+Plug 'ryanoasis/vim-devicons'
 "Linter
 Plug 'w0rp/ale'
 "Snippets
@@ -78,10 +79,10 @@ set tabstop=2 shiftwidth=2 expandtab softtabstop=2
 
 " Linter config
 let g:ale_fixers = {
-      \ 'javascript': ['eslint']
+      \ 'javascript': ['prettier_standard']
       \}
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 let g:ale_fix_on_save = 1
 
 "Snippets config
