@@ -79,29 +79,34 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number 1 
-bindsym $mod+2 workspace number 2 
-bindsym $mod+3 workspace number 3 
-bindsym $mod+4 workspace number 4 
+bindsym $mod+1 workspace number 1 
+bindsym $mod+2 workspace number 2 
+bindsym $mod+3 workspace number 3 
+bindsym $mod+4 workspace number 4 
 bindsym $mod+5 workspace number 5 
 bindsym $mod+6 workspace number 6 
 bindsym $mod+7 workspace number 7 
 bindsym $mod+8 workspace number 8 
 bindsym $mod+9 workspace number 9 
-bindsym $mod+0 workspace number 10 
+bindsym $mod+0 workspace number 10 
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+1 move container to workspace number 1 
+bindsym $mod+Shift+2 move container to workspace number 2 
+bindsym $mod+Shift+3 move container to workspace number 3 
+bindsym $mod+Shift+4 move container to workspace number 4 
 bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+0 move container to workspace number 10 
 
+# Assign windows to workspaces
+assign [class="Firefox"] 2 
+assign [class="Google-chrome"] 2 
+assign [class="Kitematic"]  4 
+assign [class="Slack"] 10 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -163,7 +168,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/bg8.png
 bindsym Control+$mod+a exec --no-startup-id ~/i3scripts/lock.sh
 
 #Application shortcuts
-bindsym Control+$mod+i exec google-chrome-stable
+bindsym Control+$mod+i exec --no-startup-id firefox
 bindsym Control+$mod+x exec --no-startup-id st vifm
 bindsym Control+Shift+4 exec --no-startup-id flameshot gui
 bindsym Control+Shift+3 exec --no-startup-id flameshot full
@@ -204,7 +209,7 @@ exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 
 #Workspace name based to what is opened
-exec_always --no-startup-id exec $HOME/.cargo/bin/i3wsr
+# exec_always --no-startup-id exec $HOME/.cargo/bin/i3wsr
 
 # Touchpad configuration
 exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Natural Scrolling Enabled" 1
