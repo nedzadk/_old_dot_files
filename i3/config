@@ -123,7 +123,7 @@ client.background       #2f343f
 
 bar {
   position top
-  height 45
+  height 50
     #status_command i3status -c ~/.config/i3/i3status.conf
     status_command i3blocks -c /home/nedzad/Projects/dotfiles/i3/i3blocks.conf
     colors {

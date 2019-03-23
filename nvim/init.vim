@@ -16,6 +16,8 @@ Plug 'othree/csscomplete.vim'
 "Themes (Fancy Shit)
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'srcery-colors/srcery-vim'
+Plug 'kien/rainbow_parentheses.vim'
 "Linter
 Plug 'w0rp/ale'
 "Snippets
@@ -51,13 +53,18 @@ Plug 'junegunn/fzf.vim'
 "Buffer tabline
 Plug 'ap/vim-buftabline'
 call plug#end()
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " Fancy shit configuration
 syntax enable
 set termguicolors
 let g:onedark_terminal_italics=1
+let g:srcery_italic = 1
 set background=dark
-colorscheme onedark
+colorscheme srcery
 
 "Basic shit
 set cursorline
