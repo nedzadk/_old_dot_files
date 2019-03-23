@@ -86,9 +86,9 @@ bindsym $mod+4 workspace number 4 
 bindsym $mod+5 workspace number 5 
 bindsym $mod+6 workspace number 6 
 bindsym $mod+7 workspace number 7 
-bindsym $mod+8 workspace number 8 
-bindsym $mod+9 workspace number 9 
-bindsym $mod+0 workspace number 10 
+bindsym $mod+8 workspace number 8  
+bindsym $mod+9 workspace number 9 
+bindsym $mod+0 workspace number 10 
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1 
@@ -98,15 +98,17 @@ bindsym $mod+Shift+4 move container to workspace number 4 
 bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10 
+bindsym $mod+Shift+8 move container to workspace number 8  
+bindsym $mod+Shift+9 move container to workspace number 9 
+bindsym $mod+Shift+0 move container to workspace number 10 
 
 # Assign windows to workspaces
 assign [class="Firefox"] 2 
 assign [class="Google-chrome"] 2 
 assign [class="Kitematic"]  4 
-assign [class="Slack"] 10 
+assign [class="Bsnes"] 8  
+assign [class="Viber"] 9  
+assign [class="Slack"] 10  
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -143,18 +145,7 @@ bar {
     }
 }
 
-set $mode_system System (e) logout, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
-
-# back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym Control+$mod+Escape mode "$mode_system"
+bindsym Control+$mod+Escape exec --no-startup-id ~/i3scripts/power-menu.sh
 
 #General config
 new_window pixel 1
