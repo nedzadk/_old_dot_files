@@ -5,6 +5,8 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Rails
+Plug 'tpope/vim-rails'
 "File navigation
 Plug 'ctrlpvim/ctrlp.vim'
 "CSS/LESS/SCSS
@@ -64,7 +66,7 @@ set termguicolors
 let g:onedark_terminal_italics=1
 let g:srcery_italic = 1
 set background=dark
-colorscheme srcery
+colorscheme onedark
 
 "Basic shit
 set cursorline

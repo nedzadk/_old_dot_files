@@ -108,9 +108,11 @@ assign [class="Google-chrome"] 2 
 assign [class="Kitematic"] 4 
 assign [class="spotify"] 7 
 assign [class="vlc"] 7 
-assign [class="Bsnes"] 8  
+assign [class="Hiro"] 8  
 assign [class="Viber"] 9  
 assign [class="Slack"] 10  
+assign [class="Com.github.needle-and-thread.vocal"] 7 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -155,13 +157,14 @@ focus_follows_mouse no
 gaps inner 8
 gaps outer 0
 #smart_gaps on
-exec --no-startup-id feh --bg-fill ~/Pictures/bg8.png
+exec --no-startup-id feh --bg-fill ~/Pictures/bg1.jpg
 
 #Run lockscreen
-bindsym Control+$mod+a exec --no-startup-id ~/i3scripts/lock.sh
+bindsym Control+$mod+a exec --no-startup-id i3lock-fancy-rapid 10 10
 
 #Application shortcuts
-bindsym Control+$mod+i exec --no-startup-id firefox
+bindsym Control+$mod+o exec --no-startup-id firefox
+bindsym Control+$mod+i exec --no-startup-id google-chrome-stable
 bindsym Control+$mod+x exec --no-startup-id st vifm
 bindsym Control+Shift+4 exec --no-startup-id flameshot gui
 bindsym Control+Shift+3 exec --no-startup-id flameshot full
@@ -207,4 +210,4 @@ exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/activ
 # Touchpad configuration
 exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Tapping Enabled" 1
-exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Accel Speed" 0.8
+exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Accel Speed" 1

@@ -22,6 +22,7 @@ my $percent;
 my $ac_adapt;
 my $full_text;
 my $short_text;
+my $bat_icon;
 my $bat_number = $ENV{BAT_NUMBER} || 0;
 my $label = $ENV{LABEL} || "";
 
@@ -32,63 +33,80 @@ close(ACPI);
 
 # fail on unexpected output
 if (not defined($acpi)) {
-    # don't print anything to stderr if there is no battery
-    exit(0);
+  # don't print anything to stderr if there is no battery
+  exit(0);
 }
 elsif ($acpi !~ /: ([\w\s]+), (\d+)%/) {
-	die "$acpi\n";
+  die "$acpi\n";
 }
 
 $status = $1;
 $percent = $2;
 $full_text = "$label$percent%";
 
-if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
-} elsif ($status eq 'Charging') {
-	$full_text .= ' CHR';
-} elsif ($status eq 'Unknown') {
-	open (AC_ADAPTER, "acpi -a |") or die;
-	$ac_adapt = <AC_ADAPTER>;
-	close(AC_ADAPTER);
+if ($status eq 'Unknown') {
+  open (AC_ADAPTER, "acpi -a |") or die;
+  $ac_adapt = <AC_ADAPTER>;
+  close(AC_ADAPTER);
 
-	if ($ac_adapt =~ /: ([\w-]+)/) {
-		$ac_adapt = $1;
+  if ($ac_adapt =~ /: ([\w-]+)/) {
+    $ac_adapt = $1;
 
-		if ($ac_adapt eq 'on-line') {
-			$full_text .= ' CHR';
-		} elsif ($ac_adapt eq 'off-line') {
-			$full_text .= ' DIS';
-		}
-	}
+    if ($ac_adapt eq 'on-line') {
+      $status = 'Charging';
+    } elsif ($ac_adapt eq 'off-line') {
+      $status = 'Discharging';
+    }
+  }
 }
 
 $short_text = $full_text;
 
 if ($acpi =~ /(\d\d:\d\d):/) {
-	$full_text .= " ($1)";
+  $full_text .= " - $1";
 }
 
+if ($percent < 20) {
+  $bat_icon = "";
+} elsif ($percent < 40) {
+  $bat_icon = "";
+} elsif ($percent < 60) {
+  $bat_icon = "";
+} elsif ($percent < 85) {
+  $bat_icon = "";
+} elsif ($percent > 85) {
+  $bat_icon = "";
+}
+
+if ($status eq 'Charging') {
+  $bat_icon = "";
+}
 # print text
-print "$full_text\n";
-print "$short_text\n";
+print "$bat_icon $full_text\n";
+print "$bat_icon $short_text\n";
 
 # consider color and urgent flag only on discharge
 if ($status eq 'Discharging') {
 
-	if ($percent < 20) {
-		print "#FF0000\n";
-	} elsif ($percent < 40) {
-		print "#FFAE00\n";
-	} elsif ($percent < 60) {
-		print "#FFF600\n";
-	} elsif ($percent < 85) {
-		print "#A8FF00\n";
-	}
+  if ($percent < 20) {
+    print "#FF0000\n";
+  } elsif ($percent < 40) {
+    print "#FFAE00\n";
+  } elsif ($percent < 60) {
+    print "#FFF600\n";
+  } elsif ($percent < 85) {
+    print "#A8FF00\n";
+  } elsif ($percent > 85) {
+    print "#A8FF00\n";
+  }
 
-	if ($percent < 5) {
-		exit(33);
-	}
+  if ($percent < 5) {
+    exit(33);
+  }
+}
+
+if ($status eq 'Charging') {
+  print "#FFFFFF\n";
 }
 
 exit(0);
