@@ -4,6 +4,7 @@
 API_KEY="2a899fcbd064d92dee6293115b08bf7a"
 
 # Check on http://openweathermap.org/find
+# Sarajevo 3191281
 CITY_ID="3191281"
 
 URGENT_LOWER=0
