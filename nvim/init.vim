@@ -122,6 +122,10 @@ set nobackup
 let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
 
+"Additional configurations
+"
+"Trim whitepasce on end of the line
+autocmd BufWritePre *.js,*.jsx,*.rb :%s/ \+$//ge
 
 "Buffer navigation
 set hidden
