@@ -52,8 +52,6 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 "Fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-"Buffer tabline
-Plug 'ap/vim-buftabline'
 call plug#end()
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -122,6 +120,8 @@ set nobackup
 
 "Airline config 
 let g:airline_theme = 'onedark'
+let g:airline#extensions#tabline#enabled = 1
+
 
 "Buffer navigation
 set hidden
