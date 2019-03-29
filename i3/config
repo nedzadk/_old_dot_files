@@ -158,13 +158,14 @@ focus_follows_mouse no
 gaps inner 8
 gaps outer 0
 #smart_gaps on
-exec --no-startup-id feh --bg-fill ~/Pictures/bg1.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/bg3.jpg
 
 #Run lockscreen
 bindsym Control+$mod+a exec --no-startup-id i3lock-fancy-rapid 10 10
 
 #Application shortcuts
 bindsym Control+$mod+o exec --no-startup-id firefox
+bindsym Control+$mod+c exec --no-startup-id code
 bindsym Control+$mod+i exec --no-startup-id google-chrome-stable
 bindsym Control+$mod+x exec --no-startup-id st vifm
 bindsym Control+Shift+4 exec --no-startup-id flameshot gui
@@ -183,6 +184,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
+exec --no-startup-id light -N 10
+exec --no-startup-id light -S 30
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
 
