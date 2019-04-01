@@ -163,6 +163,10 @@ exec --no-startup-id feh --bg-fill ~/Pictures/bg2.jpg
 #Run lockscreen
 bindsym Control+$mod+a exec --no-startup-id i3lock-fancy-rapid 10 10
 
+#Scratchpad 
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 #Application shortcuts
 bindsym Control+$mod+o exec --no-startup-id firefox
 bindsym Control+$mod+c exec --no-startup-id code
