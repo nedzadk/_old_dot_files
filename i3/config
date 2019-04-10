@@ -206,12 +206,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id unclutter
 exec --no-startup-id dunst
 
-# Restore GNOME's settings
-exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
-
-# Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
-exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
-
 #Workspace name based to what is opened
 # exec_always --no-startup-id exec $HOME/.cargo/bin/i3wsr
 
