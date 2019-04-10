@@ -22,9 +22,6 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'kien/rainbow_parentheses.vim'
 "Linter
 Plug 'w0rp/ale'
-"Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 "Misc things
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
