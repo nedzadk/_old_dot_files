@@ -9,6 +9,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id st -e /bin/zsh --login
+# bindsym $mod+Return exec --no-startup-id terminator 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -137,7 +138,7 @@ bar {
   position top
   height 50
     #status_command i3status -c ~/.config/i3/i3status.conf
-    status_command i3blocks -c /home/nedzad/Projects/dotfiles/i3/i3blocks.conf
+    status_command i3blocks -c /home/nedzad/Projects/_old_dot_files/i3/i3blocks.conf
     colors {
       background #2f343f
         statusline #2f343f
@@ -161,16 +162,16 @@ gaps outer 0
 exec --no-startup-id feh --bg-fill ~/Pictures/bg1.jpg
 
 #Run lockscreen
-bindsym Control+$mod+a exec --no-startup-id i3lock -i ~/Pictures/bg1.png -c '#000000' -o '#191d0f' -w '#572020' -l '#ffffff' -e
+bindsym Control+$mod+a exec --no-startup-id i3lock -c 000000
 
-#Scratchpad 
+#Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #Application shortcuts
 bindsym Control+$mod+o exec --no-startup-id firefox
 bindsym Control+$mod+c exec --no-startup-id code
-bindsym Control+$mod+i exec --no-startup-id google-chrome-stable
+bindsym Control+$mod+i exec --no-startup-id google-chrome-stable --force-dark-mode
 bindsym Control+$mod+x exec --no-startup-id st vifm
 bindsym Control+Shift+4 exec --no-startup-id flameshot gui
 bindsym Control+Shift+3 exec --no-startup-id flameshot full
@@ -210,9 +211,9 @@ exec --no-startup-id dunst
 # exec_always --no-startup-id exec $HOME/.cargo/bin/i3wsr
 
 # Touchpad configuration
-exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Tapping Enabled" 1
-exec --no-startup-id xinput --set-prop 'SynPS/2 Synaptics TouchPad' "libinput Accel Speed" 1
+exec --no-startup-id xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' "libinput Tapping Enabled" 1
+exec --no-startup-id xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' "libinput Accel Speed" 1
 
 #Reamp capslock to ctrl
 exec --no-startup-id setxkbmap -layout us -option ctrl:nocaps
